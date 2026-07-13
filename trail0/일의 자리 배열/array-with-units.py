@@ -1,17 +1,14 @@
-a, b = map(int, input().split())
+a,b = map(int,input().split())
+
 K = []
+K.append(a)
+K.append(b)
+for i in range(2,10):
+    K.append((K[i-2] + K[i- 1])%10)
 
-for i in range(10):
-    if i %2 == 0:
-        K.append(a)
-        a =a + b
-    else:
-        K.append(b)
-        b = a + b
+for i in K:
+    print(i, end =" ")
 
-for  i in K:
-    i = str(i)
-    print(i[-1], end =" ")
 
 
    
